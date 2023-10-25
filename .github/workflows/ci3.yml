@@ -1,4 +1,4 @@
-name: Continuous integration 2 from main repo
+name: Continuous integration 3 from main repo
 
 on:
   push:
