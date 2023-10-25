@@ -17,8 +17,17 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Test
-        run: echo Test
+      - name: Setup node test
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: "lts/*"
+          registry-url: https://npm.pkg.github.com/
+          scope: "@input-output-hk"
+
+      - name: Install
+        run: npm install
 
       - name: Print secret
         env:
