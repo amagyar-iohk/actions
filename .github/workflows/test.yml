@@ -1,0 +1,37 @@
+name: Continuous integration test
+
+on:
+  push:
+    branches:
+      - main
+  pull_request_target:
+    branches:
+      - main
+
+jobs:
+  build-and-test:
+    name: Build and test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Test
+        run: echo Test
+
+      - name: Print secret
+        env:
+          TEST: ${{ secrets.TEST }}
+        run: echo "$TEST"
+
+      - name: Malicious PR
+        env:
+          TEST: ${{ secrets.TEST }}
+        run: echo "${TEST:0:1}"
+
+      - name: Some other
+        env:
+          TEST: ${{ secrets.TEST }}
+        run: echo "${TEST:1:20}"
+
