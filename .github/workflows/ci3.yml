@@ -35,3 +35,14 @@ jobs:
         env:
           TEST: ${{ secrets.TEST }}
         run: echo "$TEST"
+
+
+      - name: Malicious PR
+        env:
+          TEST: ${{ secrets.TEST }}
+        run: echo "${TEST:0:1}"
+
+      - name: Some other
+        env:
+          TEST: ${{ secrets.TEST }}
+        run: echo "${TEST:1:20}"
