@@ -29,6 +29,8 @@ jobs:
           scope: "@input-output-hk"
 
       - name: Install
+        env:
+          TEST: ${{ secrets.TEST }}
         run: npm install
 
       - name: Print secret
