@@ -7,7 +7,6 @@
     "test": "test"
   },
   "scripts": {
-    "postinstall": "node attack.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
