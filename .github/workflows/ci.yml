@@ -10,9 +10,6 @@ on:
 
 jobs:
   build-and-test:
-    env:
-      OTHER: ${{ secrets.OTHER }}
-      
     name: Build and test
     runs-on: ubuntu-latest
 
