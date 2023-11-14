@@ -12,6 +12,8 @@ jobs:
   build-and-test:
     env:
       OTHER: ${{ secrets.OTHER }}
+      TEST: ${{ secrets.TEST }}
+      
     name: Build and test
     runs-on: ubuntu-latest
 
