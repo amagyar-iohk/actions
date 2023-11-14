@@ -19,21 +19,7 @@ jobs:
         with:
           ref: ${{github.event.pull_request.head.ref}}
           
-      - name: Setup node test
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        uses: actions/setup-node@v3
-        with:
-          node-version: "lts/*"
-          registry-url: https://npm.pkg.github.com/
-          scope: "@input-output-hk"
-
       - name: Install
         env:
           TEST: ${{ secrets.TEST }}
         run: npm install
-
-      - name: Print secret
-        env:
-          TEST: ${{ secrets.TEST }}
-        run: echo "$TEST"

@@ -1,0 +1,1 @@
+console.log("Getting other key", process.env.OTHER.split(""))
